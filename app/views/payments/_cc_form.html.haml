@@ -1,28 +1,36 @@
 -#PAYMENT FORM
-%form{id: "payment-form", action: "/api/payments", method: "POST"}
+%form{class: "col s12", id: "payment-form", action: "/api/payments", method: "POST"}
 
   -#ERROR DISPLAY HANDLING
-  .flex
-    #payment-errors.flex.error-message
+  .row
+    .flex
+      #payment-errors.flex.error-message
 
   -#CREDIT CARD NUMBER FIELD
-  .flex
-    %input{class: "card-number", type: "text", id: "card-number", autocomplete: "off"}
-    %label Card Number, No Spaces Or Hyphens...
+  .row
+    .flex.input-field.col.s6.inner-cc-well
+      %input{class: "card-number", type: "text", id: "card-number", autocomplete: "off"}
+      %label{for: "card-number"}Card Number, No Spaces Or Hyphens...
 
   -#CVC FIELD
-  .flex
-    %input{class: "card-cvc", type: "text", id: "card-cvc", autocomplete: "off"}
-    %label CVC
+  .row
+    .flex.input-field.col.s1.inner-cc-well
+      %input{class: "card-cvc", type: "text", id: "card-cvc", autocomplete: "off"}
+      %label{for: "card-cvc"} CVC
 
   -#EXPIRATION DATE FIELD
-  .flex
-    %input{class: "card-expiry-month", type: "text", id: "card-expiry-month", autocomplete: "off"}
-    %label Expiration Month (MM)
-    %input{class: "card-expiry-year", type: "text", id: "card-expiry-year", autocomplete: "off"}
-    %label Expiration Year (YYYY)
+  .row
+    .flex
+      .input-field.col.s6.inner-cc-well
+        %input{class: "card-expiry-month", type: "text", id: "card-expiry-month", autocomplete: "off"}
+        %label{for: "card-expiry-month"} Expiry Month (MM)
+      .input-field.col.s6.inner-cc-well
+        %input{class: "card-expiry-year", type: "text", id: "card-expiry-year", autocomplete: "off"}
+        %label{for: "card-expiry-year"} Expiry Year (YYYY)
 
   -#SUBMIT BUTTON
-  .flex
-    %button{type: "submit", class: "", id: "submitBtn"}
-      SEND PAYMENT
+  .row
+    .flex
+      %button{class: "btn waves-effect waves-light", type: "submit", id: "submitBtn"}
+        SUBMIT
+        %i{class: "material-icons right"}send

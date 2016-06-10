@@ -8,23 +8,24 @@
 %h1 New Payment
 = render 'form'
 = link_to 'Back', payments_path
-%ul{class: "collapsible popout", data: {collapsible: "accordion"}}
-  %li
-    .collapsible-header
-      %i.material-icons payment
-      Pay With Credit Card
-    .collapsible-body
-      %p Lorem ipsum dolor sit amet
-      = render '_cc_form'
-  %li
-    .collapsible-header
-      %i.material-icons place
-      Pay With Sofort Uberweisung
-    .collapsible-body
-      %p Lorem ipsum dolor sit amet
-  %li
-    .collapsible-header
-      %i.material-icons whatshot
-      Pay with Paypal
-    .collapsible-body
-      %p Lorem ipsum dolor sit amet
+.payment-options
+  %ul{class: "collapsible popout", data: {collapsible: "accordion"}}
+    %li
+      .collapsible-header
+        %i.material-icons payment
+        Pay With Credit Card
+      .collapsible-body
+        %p Lorem ipsum dolor sit amet
+        = render 'cc_form'
+    %li
+      .collapsible-header
+        %i.material-icons place
+        Pay With Sofort Uberweisung
+      .collapsible-body
+        %p Lorem ipsum dolor sit amet
+    %li
+      .collapsible-header
+        %i.material-icons whatshot
+        Pay with Paypal
+      .collapsible-body
+        %p Lorem ipsum dolor sit amet

@@ -1,3 +1,17 @@
 // Place all the styles related to the payments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.payment-options {
+  margin-left: 10%;
+  margin-right: 10%;
+  max-width: 60%;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.collapsible-header {
+  font-size: 20px;
+}

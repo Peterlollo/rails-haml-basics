@@ -11,19 +11,20 @@
 %ul{class: "collapsible popout", data: {collapsible: "accordion"}}
   %li
     .collapsible-header
-      %i.material-icons filter_drama
-      First
+      %i.material-icons payment
+      Pay With Credit Card
     .collapsible-body
       %p Lorem ipsum dolor sit amet
+      = render '_cc_form'
   %li
     .collapsible-header
       %i.material-icons place
-      Second
+      Pay With Sofort Uberweisung
     .collapsible-body
       %p Lorem ipsum dolor sit amet
   %li
     .collapsible-header
       %i.material-icons whatshot
-      Third
+      Pay with Paypal
     .collapsible-body
       %p Lorem ipsum dolor sit amet

@@ -13,7 +13,7 @@
 }
 
 .collapsible-header {
-  border: 1px solid rgba(0, 128, 0, 0.45);
+  border: 1px solid #2BBBAD;
   margin-bottom: 10px;
 }
 
@@ -24,4 +24,21 @@
 
 button#submitBtn {
   margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.row {
+  margin-bottom: 0px;
+}
+
+#live_help {
+  margin-left: -20px;
+  line-height: 2;
+  color: gray;
+  cursor: pointer;
+}
+
+a.tooltipped:hover {
+  background-color: #FFFFFF;
+  color: #FFFFFF;
 }

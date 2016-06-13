@@ -46,3 +46,21 @@ a.tooltipped:hover {
 input.select-dropdown {
   color: #9e9e9e;
 }
+
+.paypal-logo, .sofort-logo, .creditcard-logo {
+  width: 70px;
+  font-size: 1.6rem;
+  line-height: 3rem;
+  display: block;
+  float: left;
+  text-align: center;
+  margin-right: 1rem;
+  box-sizing: inherit;
+}
+
+.payment-well-text {
+  font-family: "GillSans", "Calibri", "Trebuchet", "sans-serif";
+  letter-spacing: 0.15em;
+  font-size: 1.75em;
+  line-height: 110%;
+}

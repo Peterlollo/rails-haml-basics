@@ -1,15 +1,4 @@
 -#EXPIRATION FIELDS FOR CC FORM
-
--#GET THE CURRENT DATE AND SET THE EXPIRATION YEAR FIELD VALUES APPROPRIATELY
-:javascript
-  function generateExpiryYearRange() {
-    var current_year = new Date().getFullYear();
-    //var $expiryYearOption = '<option value=900>900</option>'
-    //var $expiryYearOption = $('<option>').val('999').text('999')
-    //$('select#expiry-year > option').first().append($expiryYearOption);
-    //$('select.expiry-year.initialized').append($expiryYearOption);
-  }
-
 .flex.input-field.col.s2
   %select
     %option{value:"", disabled: true, selected: true} Month
@@ -29,6 +18,7 @@
 .flex.input-field.col.s2.expiry-year
   %select#expiry-year
     %option{value:"", disabled: true, selected: true} Year
+    -#GET THE CURRENT YEAR AND SET THE EXPIRATION YEAR FIELD VALUES APPROPRIATELY
     - (@current_year...@final_year).each do |i|
       %option{value: "#{i}"} #{i}
 

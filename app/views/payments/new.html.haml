@@ -3,8 +3,8 @@
      $('.collapsible').collapsible({
        accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
      });
+     //INITIALIZE EXPIRATION DATE DROP DOWN MENUS WITHIN CC FORM
      $('select').material_select();
-     generateExpiryYearRange();
    });
 
 %h1 New Payment
@@ -14,20 +14,20 @@
   %ul{class: "collapsible popout", data: {collapsible: "accordion"}}
     %li
       .collapsible-header
-        %i.material-icons payment
-        %h5 Pay With Credit Card
+        = image_tag('creditcard-logo.png', class: 'creditcard-logo', alt: 'Credit card')
+        %p.payment-well-text PAY WITH CREDIT CARD
       .collapsible-body
         .row
-          = render 'cc_form'
+          = render '/payments/cc_form/cc_form'
     %li
       .collapsible-header
-        %i.material-icons place
-        %h5 Pay With Sofort Uberweisung
+        = image_tag('sofort-logo.png', class: 'sofort-logo', alt: 'Sofort')
+        %p.payment-well-text PAY WITH SOFORT ÜBERWEISUNG
       .collapsible-body
         %p Lorem ipsum dolor sit amet
     %li
       .collapsible-header
-        %i.material-icons whatshot
-        %h5 Pay with Paypal
+        =image_tag('paypal-logo.png', class: 'paypal-logo', alt: 'PayPal')
+        %p.payment-well-text PAY WITH PAYPAL
       .collapsible-body
         %p Lorem ipsum dolor sit amet

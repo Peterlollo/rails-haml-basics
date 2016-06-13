@@ -63,4 +63,9 @@ input.select-dropdown {
   letter-spacing: 0.15em;
   font-size: 1.75em;
   line-height: 110%;
+
+  span.caret {
+    font-size: 10px;
+    float: right;
+  }
 }

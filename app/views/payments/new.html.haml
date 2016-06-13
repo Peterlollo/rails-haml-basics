@@ -17,19 +17,25 @@
     %li
       .collapsible-header
         = image_tag('creditcard-logo.png', class: 'creditcard-logo', alt: 'Credit card')
-        %p.payment-well-text PAY WITH CREDIT CARD
+        %p.payment-well-text
+          PAY WITH CREDIT CARD
+          %span.caret ▼
       .collapsible-body
         .row
           = render '/payments/cc_form/cc_form'
     %li
       .collapsible-header
         = image_tag('sofort-logo.png', class: 'sofort-logo', alt: 'Sofort')
-        %p.payment-well-text PAY WITH SOFORT ÜBERWEISUNG
+        %p.payment-well-text
+          PAY WITH SOFORT ÜBERWEISUNG
+          %span.caret ▼
       .collapsible-body
         %p Lorem ipsum dolor sit amet
     %li
       .collapsible-header
         =image_tag('paypal-logo.png', class: 'paypal-logo', alt: 'PayPal')
-        %p.payment-well-text PAY WITH PAYPAL
+        %p.payment-well-text
+          PAY WITH PAYPAL
+          %span.caret ▼
       .collapsible-body
         %p Lorem ipsum dolor sit amet

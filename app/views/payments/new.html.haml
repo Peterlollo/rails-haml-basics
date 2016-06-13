@@ -39,4 +39,7 @@
           PAY WITH PAYPAL
           %span.caret ▼
       .collapsible-body
-        %p Lorem ipsum dolor sit amet
+        .row
+          .flex-center
+            %button{class: "btn waves-effect waves-light", type: "submit", id: "paypal-submit-btn"}
+              =image_tag('paypal-payment-btn.png', class: 'paypal-logo', alt: 'PayPal Submit Button')

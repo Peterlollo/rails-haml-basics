@@ -15,29 +15,32 @@
 .payment-options
   %ul{class: "collapsible popout", data: {collapsible: "accordion"}}
     %li
-      .collapsible-header
-        = image_tag('creditcard-logo.png', class: 'creditcard-logo', alt: 'Credit card')
-        %p.payment-well-text
-          PAY WITH CREDIT CARD
-          %span.caret ▼
+      .collapsible-header.row
+        .valign-wrapper
+          = image_tag('creditcard-logo.png', class: 'valign creditcard-logo col s3 m2', alt: 'Credit card')
+          %p.payment-well-text.valign.col.s10
+            PAY WITH CREDIT CARD
+            %span.caret ▼
       .collapsible-body
         .row
           = render '/payments/payment_form/cc_form'
     %li
-      .collapsible-header
-        = image_tag('sofort-logo.png', class: 'sofort-logo', alt: 'Sofort')
-        %p.payment-well-text
-          PAY WITH SOFORT ÜBERWEISUNG
-          %span.caret ▼
+      .collapsible-header.row
+        .valign-wrapper
+          = image_tag('sofort-logo.png', class: 'valign sofort-logo col s3 m2', alt: 'Sofort')
+          %p.payment-well-text.valign.col.s10
+            PAY WITH SOFORT ÜBERWEISUNG
+            %span.caret ▼
       .collapsible-body
         .row
           = render '/payments/payment_form/sofort_form'
     %li
-      .collapsible-header
-        =image_tag('paypal-logo.png', class: 'paypal-logo', alt: 'PayPal')
-        %p.payment-well-text
-          PAY WITH PAYPAL
-          %span.caret ▼
+      .collapsible-header.row
+        .valign-wrapper
+          =image_tag('paypal-logo.png', class: 'valign paypal-logo col s3 m2', alt: 'PayPal')
+          %p.payment-well-text.valign.col.s10
+            PAY WITH PAYPAL
+            %span.caret ▼
       .collapsible-body
         .row
           .flex-center

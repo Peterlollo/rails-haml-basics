@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
 
+
   # GET /payments
   # GET /payments.json
   def index
@@ -15,6 +16,9 @@ class PaymentsController < ApplicationController
   # GET /payments/new
   def new
     @payment = Payment.new
+    # Generate Dynamic Year Range For Credit Card Expiry Year Field
+    @current_year = Date.today.year
+    @final_year = @current_year + 20
   end
 
   # GET /payments/1/edit

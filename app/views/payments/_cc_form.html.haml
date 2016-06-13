@@ -6,6 +6,12 @@
     .flex
       #payment-errors.flex.error-message
 
+  -#CARD HOLDER NAME
+  .row
+    .flex.input-field.col.s6.inner-cc-well
+      %input{class: "card-holder-name", type: "text", id: "card-holder-name", autocomplete: "on"}
+      %label{for: "card-holder-name"}Name (as it appears on your card)
+
   -#CREDIT CARD NUMBER FIELD
   .row
     .flex.input-field.col.s6.inner-cc-well
@@ -14,36 +20,15 @@
 
   -#EXPIRATION SELECT MENUS
   .row
-    .flex.input-field.col.s3
-      %select
-        %option{value:"", disabled: true, selected: true}
-        Choose your option
-        %option{value: "01"} 01
-        %option{value: "02"} 02
-        %option{value: "03"} 03
-        %option{value: "04"} 04
-      %label Expiration Month
-    .flex.input-field.col.s3
-      %select
-        %option{value:"", disabled: true, selected: true}
-        Choose your option
-        %option{value: "2024"} 2024
-        %option{value: "2023"} 2023
-        %option{value: "2022"} 2022
-        %option{value: "2021"} 2021
-      %label Expiration Year
+    = render 'cc_expiration_fields'
+
+
     -#CVC FIELD
     .flex.input-field.col.s2.inner-cc-well
       %input{class: "card-cvc", type: "text", id: "card-cvc", autocomplete: "off"}
       %label{for: "card-cvc"} CVC
-      %a{class:"tooltipped", "data-position": "top", "data-delay": "40", "data-tooltip": "The last 3 digits on the back of your credit card"}
+      %a{class:"tooltipped", "data-position": "top", "data-delay": "40", "data-tooltip": "3 digits on the back of your credit card. For Amex, 4 digits on the front"}
         %i{class: "material-icons", id: "live_help"} live_help
-
-  -#CARD HOLDER NAME
-  .row
-    .flex.input-field.col.s6.inner-cc-well
-      %input{class: "card-holder-name", type: "text", id: "card-holder-name", autocomplete: "on"}
-      %label{for: "card-holder-name"}Card Holder Name
 
 
 

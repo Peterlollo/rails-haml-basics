@@ -2,7 +2,7 @@
 
 -#MONTH EXPIRATION FIELD
 .flex.input-field.col.s6.l3
-  %select
+  %select#expiry-month
     %option{value:"", disabled: true, selected: true} Month
     %option{value: "01"} 01
     %option{value: "02"} 02
@@ -21,7 +21,7 @@
 -#YEAR EXPIRATION FIELD
 .flex.input-field.col.s6.l3.expiry-year
   %select#expiry-year
-    %option{value:"", disabled: true, selected: true} Year
+    %option{value:"", disabled: true, selected: true, class: ".card-expiry-year"} Year
     -#GET THE CURRENT YEAR AND SET EXPIRATION VALUES FOR NEXT 20 YEARS
     - (@current_year...@final_year).each do |i|
       %option{value: "#{i}"} #{i}

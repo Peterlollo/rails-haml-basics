@@ -79,6 +79,10 @@ input.select-dropdown {
   }
 }
 
+label#sofort-label {
+  top: 15px;
+}
+
 /* STANDARD MEDIA QUERY BREAK POINTS IF NECESSARY FOR ADDITONAL FUNCTIONALITY */
 
 @media only screen and (min-width: 768px) {
@@ -95,6 +99,11 @@ input.select-dropdown {
     label.cc-holder-field, label.cc-number-field {
       top: 0.7rem;
       line-height: 13px;
+    }
+
+    label#sofort-label {
+      top: -14px;
+      left: 2.5rem;
     }
 }
 

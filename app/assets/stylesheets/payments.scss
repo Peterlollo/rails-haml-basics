@@ -1,12 +1,12 @@
 // Place all the styles related to the payments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.payment-options {
-  margin-left: 10%;
-  margin-right: 10%;
-  max-width: 60%;
-}
 
+/*PAYMENT FORM CSS*/
+
+
+
+/*FLEX FOR LAYOUT CONTROL*/
 .flex {
   display: flex;
   justify-content: flex-start;
@@ -17,12 +17,20 @@
   justify-content: center;
 }
 
+/*MATERIALIZE CSS LAYOUT CONTROL*/
+.row {
+  margin-bottom: 0px;
+}
+
+/*ACCORDION HEADERS*/
 .collapsible-header {
   border: 1px solid #8BC34A;
   margin-bottom: 10px;
 }
 
-button#submitBtn, #paypal-submit-btn, button#sofort-submit-btn {
+
+/*BUTTONS*/
+button {
   margin-bottom: 10px;
   margin-top: 10px;
 }
@@ -36,10 +44,9 @@ button#paypal-submit-btn {
   background-color: #8BC34A;
 }
 
-.row {
-  margin-bottom: 0px;
-}
+/*ICONS, LOGOS, & TOOLTIPS*/
 
+/*CVC LOGO HELP ICON*/
 #live_help {
   margin-left: -20px;
   line-height: 2;
@@ -47,25 +54,19 @@ button#paypal-submit-btn {
   cursor: pointer;
 }
 
+.paypal-logo, .sofort-logo, .creditcard-logo {
+  width: 100%;
+}
+
 a.tooltipped:hover {
   background-color: #FFFFFF;
   color: #FFFFFF;
 }
 
+
+/*PAYMENT FORM COMPONENTS*/
 input.select-dropdown {
   color: #9e9e9e;
-}
-
-.paypal-logo, .sofort-logo, .creditcard-logo {
-  width: 100%;
-  /*height: 70px;*/
-/*  font-size: 1.6rem;
-  line-height: 3rem;
-  display: block;
-  float: left;
-  text-align: center;
-  margin-right: 1rem;
-  box-sizing: inherit;*/
 }
 
 .payment-well-text {
@@ -79,37 +80,37 @@ input.select-dropdown {
     float: right;
   }
 }
-
+/*CENTER LABEL FOR SOFORT INPUT SELECT MENU*/
 label#sofort-label {
   top: 15px;
 }
 
-/* STANDARD MEDIA QUERY BREAK POINTS IF NECESSARY FOR ADDITONAL FUNCTIONALITY */
 
+/* STANDARD MEDIA QUERY BREAK POINTS IF NECESSARY FOR ADDITONAL FUNCTIONALITY */
 @media only screen and (min-width: 768px) {
     /* tablets and desktop */
-}
 
-@media only screen and (max-width: 767px) {
-    /* phones */
+    /* CONSTRAIN WIDTH OF ACCORDION ON LARGE SCREENS */
+    .payment-options {
+      margin-left: 10%;
+      margin-right: 10%;
+      max-width: 60%;
+    }
 }
 
 @media only screen and (max-width: 495px) {
     /* phones */
+
     /*PREVENT OVERLAP OF LABELS AND INPUT LINES WITHIN CC FORM FOR CARD HOLDER AND CARD NUMBER FIELDS*/
     label.cc-holder-field, label.cc-number-field {
       top: 0.7rem;
       line-height: 13px;
     }
-
+    /*CENTER AND RAISE LABEL FOR SOFORT INPUT SELECT MENU*/
     label#sofort-label {
       top: -14px;
       left: 2.5rem;
     }
-}
-
-@media only screen and (max-width: 767px) and (orientation: portrait) {
-    /* portrait phones */
 }
 
 @-ms-viewport{

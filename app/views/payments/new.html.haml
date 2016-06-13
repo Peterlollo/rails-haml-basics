@@ -1,19 +1,36 @@
+-#JAVASCRIPT TO INITIALIZE MATERIALIZE CSS JS COMPONENTS
 :javascript
   $(document).ready(function(){
+
      $('.collapsible').collapsible({
-       accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+       // CHANGE COLLAPSIBLE BEHAVIOR TO EXPANDABLE INSTEAD OF DEFAULT ACCORDION STYLE
+       accordion : false
      });
+
      //INITIALIZE EXPIRATION DATE DROP DOWN MENUS WITHIN CC FORM
      $('select').material_select();
+
      //INITIALIZE TOOLTIP ON CVC FIELD WITHIN CC FORM
      $('.tooltipped').tooltip({delay: 40});
-   });
+  });
 
+
+
+-#STOCK RAILS CODE
 %h1 New Payment
 = render 'form'
 = link_to 'Back', payments_path
+
+
+
+-#PAYMENT WEB FORM
 .payment-options
+
+  -#CREATE ACCORDION FOR PAYMENT OPTIONS
   %ul{class: "collapsible popout", data: {collapsible: "accordion"}}
+
+
+    -#PAYMENT OPTION 1: CREDIT CARD
     %li
       .collapsible-header.row
         .valign-wrapper
@@ -24,6 +41,9 @@
       .collapsible-body
         .row
           = render '/payments/payment_form/cc_form'
+
+
+    -#PAYMENT OPTION 2: SOFORT
     %li
       .collapsible-header.row
         .valign-wrapper
@@ -34,6 +54,9 @@
       .collapsible-body
         .row
           = render '/payments/payment_form/sofort_form'
+
+
+    -#PAYMENT OPTION 3: PAY PAL
     %li
       .collapsible-header.row
         .valign-wrapper

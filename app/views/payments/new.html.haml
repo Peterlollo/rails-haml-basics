@@ -12,14 +12,24 @@
 
      //INITIALIZE TOOLTIP ON CVC FIELD WITHIN CC FORM
      $('.tooltipped').tooltip({delay: 40});
+
+     //GET STRIPE JS AND SET PUBLISHABLE KEY
+     $.ajax({
+       url: "https://js.stripe.com/v2/",
+       type: "GET",
+       success: function(data){
+         console.log('stripe data loaded: ', data);
+         Stripe.setPublishableKey('pk_test_16no6ltOTd6l1mneVsRDbpMJ');
+         }
+      });
   });
 
 
 
 -#STOCK RAILS CODE
-%h1 New Payment
-= render 'form'
-= link_to 'Back', payments_path
+/ %h1 New Payment
+/ = render 'form'
+/ = link_to 'Back', payments_path
 
 
 

@@ -1,10 +1,12 @@
+=javascript_include_tag 'stripe-cc-form'
+
 -#PAYMENT FORM
-%form{class: "col s12", id: "payment-form", action: "/api/payments", method: "POST"}
+%form{class: "col s12", id: "payment-form", action: "/payments", method: "POST"}
 
   -#ERROR DISPLAY HANDLING
   .row
-    .flex
-      #payment-errors.flex.error-message
+    .flex-center.col.s12
+      #payment-errors.error-message
 
   -#CARD HOLDER NAME
   .row

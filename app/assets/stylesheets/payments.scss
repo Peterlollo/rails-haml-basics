@@ -44,9 +44,9 @@ button#paypal-submit-btn {
   background-color: #8BC34A;
 }
 
-/*ICONS, LOGOS, & TOOLTIPS*/
+/* ICONS, LOGOS, & TOOLTIPS */
 
-/*CVC LOGO HELP ICON*/
+/* CVC LOGO HELP ICON */
 #live_help {
   margin-left: -20px;
   line-height: 2;
@@ -64,7 +64,7 @@ a.tooltipped:hover {
 }
 
 
-/*PAYMENT FORM COMPONENTS*/
+/* PAYMENT FORM COMPONENTS */
 input.select-dropdown {
   color: #9e9e9e;
 }
@@ -80,9 +80,19 @@ input.select-dropdown {
     float: right;
   }
 }
-/*CENTER LABEL FOR SOFORT INPUT SELECT MENU*/
+/* center label for sofort input select menu */
 label#sofort-label {
   top: 15px;
+}
+
+.error-message {
+  color: red;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#input-error {
+  border-bottom: 2px solid red;
 }
 
 

@@ -8,23 +8,23 @@
 
   -#CARD HOLDER NAME
   .row
-    .flex.input-field.col.s6.inner-cc-well
+    .flex.input-field.col.s12.m10.inner-cc-well
       %input{class: "card-holder-name", type: "text", id: "card-holder-name", autocomplete: "on"}
-      %label{for: "card-holder-name"}Name (as it appears on your card)
+      %label{class: "cc-holder-field", for: "card-holder-name"}Name (as it appears on your card)
 
   -#CREDIT CARD NUMBER FIELD
   .row
-    .flex.input-field.col.s6.inner-cc-well
+    .flex.input-field.col.s12.m10.inner-cc-well
       %input{class: "card-number", type: "text", id: "card-number", autocomplete: "off"}
-      %label{for: "card-number"}Card Number (no spaces or hyphens)
+      %label{class: "cc-number-field", for: "card-number"}Card Number (no spaces or hyphens)
 
   -#EXPIRATION SELECT MENUS
   .row
-    = render '/payments/cc_form/cc_expiration_fields'
+    = render '/payments/payment_form/cc_expiration_fields'
 
 
     -#CVC FIELD
-    .flex.input-field.col.s2.inner-cc-well
+    .flex.input-field.col.s6.m3.l2.inner-cc-well
       %input{class: "card-cvc", type: "text", id: "card-cvc", autocomplete: "off"}
       %label{for: "card-cvc"} CVC
       %a{class:"tooltipped", "data-position": "top", "data-delay": "40", "data-tooltip": "3 digits on the back of your credit card. For Amex, 4 digits on the front"}
@@ -34,7 +34,7 @@
 
 
   -#SUBMIT BUTTON
-  .row
-    .flex
+  .row.col.s12
+    .flex-center
       %button{class: "btn waves-effect waves-light", type: "submit", id: "submitBtn"}
         PAY

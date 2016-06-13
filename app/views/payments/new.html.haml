@@ -22,7 +22,7 @@
           %span.caret ▼
       .collapsible-body
         .row
-          = render '/payments/cc_form/cc_form'
+          = render '/payments/payment_form/cc_form'
     %li
       .collapsible-header
         = image_tag('sofort-logo.png', class: 'sofort-logo', alt: 'Sofort')
@@ -30,7 +30,8 @@
           PAY WITH SOFORT ÜBERWEISUNG
           %span.caret ▼
       .collapsible-body
-        %p Lorem ipsum dolor sit amet
+        .row
+          = render '/payments/payment_form/sofort_form'
     %li
       .collapsible-header
         =image_tag('paypal-logo.png', class: 'paypal-logo', alt: 'PayPal')

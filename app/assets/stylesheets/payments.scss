@@ -9,6 +9,11 @@
 
 .flex {
   display: flex;
+  justify-content: flex-start;
+}
+
+.flex-center {
+  display: flex;
   justify-content: center;
 }
 
@@ -17,10 +22,10 @@
   margin-bottom: 10px;
 }
 
-.inner-cc-well {
+/*.inner-cc-well {
   margin-left: 12%;
   margin-right: 12%;
-}
+}*/
 
 button#submitBtn {
   margin-bottom: 10px;
@@ -72,4 +77,32 @@ input.select-dropdown {
     font-size: 10px;
     float: right;
   }
+}
+
+/* STANDARD MEDIA QUERY BREAK POINTS IF NECESSARY FOR ADDITONAL FUNCTIONALITY */
+
+@media only screen and (min-width: 768px) {
+    /* tablets and desktop */
+}
+
+@media only screen and (max-width: 767px) {
+    /* phones */
+}
+
+@media only screen and (max-width: 495px) {
+    /* phones */
+    .btn {
+      background-color: black;
+    }
+    label.cc-holder-field, label.cc-number-field {
+      top: 0.2rem;
+    }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    /* portrait phones */
+}
+
+@-ms-viewport{
+  width: device-width;
 }

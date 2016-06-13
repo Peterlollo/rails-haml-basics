@@ -91,11 +91,10 @@ input.select-dropdown {
 
 @media only screen and (max-width: 495px) {
     /* phones */
-    .btn {
-      background-color: black;
-    }
+    /*PREVENT OVERLAP OF LABELS AND INPUT LINES WITHIN CC FORM FOR CARD HOLDER AND CARD NUMBER FIELDS*/
     label.cc-holder-field, label.cc-number-field {
-      top: 0.2rem;
+      top: 0.7rem;
+      line-height: 13px;
     }
 }
 

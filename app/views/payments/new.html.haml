@@ -1,27 +1,25 @@
+-#IMPORT STRIPE JS AND SET PUBLISHABLE KEY
+%script{:type => "text/javascript",
+        :src  => "https://js.stripe.com/v2/"}
+= javascript_include_tag "https://js.stripe.com/v2/"
+
+:javascript
+  Stripe.setPublishableKey('pk_test_16no6ltOTd6l1mneVsRDbpMJ');
+
 -#JAVASCRIPT TO INITIALIZE MATERIALIZE CSS JS COMPONENTS
 :javascript
   $(document).ready(function(){
 
-     $('.collapsible').collapsible({
-       // CHANGE COLLAPSIBLE BEHAVIOR TO EXPANDABLE INSTEAD OF DEFAULT ACCORDION STYLE
-       accordion : false
-     });
+    $('.collapsible').collapsible({
+      // CHANGE COLLAPSIBLE BEHAVIOR TO EXPANDABLE INSTEAD OF DEFAULT ACCORDION STYLE
+      accordion : false
+    });
 
-     //INITIALIZE EXPIRATION DATE DROP DOWN MENUS WITHIN CC FORM
-     $('select').material_select();
+    //INITIALIZE EXPIRATION DATE DROP DOWN MENUS WITHIN CC FORM
+    $('select').material_select();
 
-     //INITIALIZE TOOLTIP ON CVC FIELD WITHIN CC FORM
-     $('.tooltipped').tooltip({delay: 40});
-
-     //GET STRIPE JS AND SET PUBLISHABLE KEY
-     $.ajax({
-       url: "https://js.stripe.com/v2/",
-       type: "GET",
-       success: function(data){
-         console.log('stripe data loaded: ', data);
-         Stripe.setPublishableKey('pk_test_16no6ltOTd6l1mneVsRDbpMJ');
-         }
-      });
+    //INITIALIZE TOOLTIP ON CVC FIELD WITHIN CC FORM
+    $('.tooltipped').tooltip({delay: 40});
   });
 
 

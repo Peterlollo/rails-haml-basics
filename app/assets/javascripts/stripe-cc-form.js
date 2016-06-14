@@ -2,8 +2,9 @@
 $(document).ready(function() {
   console.log('doc is ready');
   // Watch for cc form submission
-  $("#payment-form").submit(function(event) {
 
+  $("#payment-form").submit(function(event) {
+    event.preventDefault();
     //Disable submit to prevent multiple submissions
     $('#submitBtn').attr('disabled', 'disabled');
 
@@ -12,22 +13,30 @@ $(document).ready(function() {
     $('#input-error').removeAttr('id', 'input-error');
     var error = false;
 
+    // Get the values:
+    var ccNum = $('.card-number').val(),
+        cvcNum = $('.card-cvc').val(),
+        expMonth = $('#expiry-month').val(),
+        expYear = $('#expiry-year').val();
+
+    console.log('ccNum: ', ccNum, ' expMonth: ', expMonth);
+
     // Validate the number:
     if (!Stripe.card.validateCardNumber(ccNum)) {
         error = true;
-        reportError('The credit card number appears to be invalid.');
+        reportError('The credit card number appears to be invalid.', 'card-number');
     }
 
     // Validate the CVC:
     if (!Stripe.card.validateCVC(cvcNum)) {
         error = true;
-        reportError('The CVC number appears to be invalid.');
+        reportError('The CVC number appears to be invalid.', 'card-cvc');
     }
 
     // Validate the expiration:
     if (!Stripe.card.validateExpiry(expMonth, expYear)) {
         error = true;
-        reportError('The expiration date appears to be invalid.');
+        reportError('The expiration date appears to be invalid.', 'select-dropdown');
     }
 
     if (!error) {
@@ -60,7 +69,6 @@ $(document).ready(function() {
     // Add the token to the form:
     f.append('<input type="hidden" name="stripeToken" value="' + token + '" />');
 
-    console.log('TOKEN FROM STRIPE: ', token);
     // Submit the form:
     // f.get(0).submit();
   }
@@ -68,13 +76,18 @@ $(document).ready(function() {
 
 //HANDLE USER ERRORS IN PAYMENT FORM
 function reportError(msg, input) {
+
+  //re-initialize text fields
+  Materialize.updateTextFields();
+  //remove old error msgs
+  $('#payment-errors').text('');
+  $('.input-error').removeClass('input-error');
   // Show the error in the form:
   $('#payment-errors').text(msg);
   //If error relates to specific input, highlight the input
   if(input) {
-    $('input.' + input).attr('id', 'input-error');
+    $('input.' + input).addClass('input-error');
   }
-
   // Re-enable the submit button:
   $('#submitBtn').prop('disabled', false);
 

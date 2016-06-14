@@ -1,8 +1,7 @@
 //ON DOCUMENT READY
 $(document).ready(function() {
-  console.log('doc is ready');
-  // Watch for cc form submission
 
+  // Watch for cc form submission
   $("#payment-form").submit(function(event) {
     event.preventDefault();
     //Disable submit to prevent multiple submissions
@@ -18,8 +17,6 @@ $(document).ready(function() {
         cvcNum = $('.card-cvc').val(),
         expMonth = $('#expiry-month').val(),
         expYear = $('#expiry-year').val();
-
-    console.log('ccNum: ', ccNum, ' expMonth: ', expMonth);
 
     // Validate the number:
     if (!Stripe.card.validateCardNumber(ccNum)) {
@@ -67,10 +64,10 @@ $(document).ready(function() {
     var token = response.id;
     console.log('TOKEN RETURNED FROM STRIPE: ', token);
     // Add the token to the form:
-    f.append('<input type="hidden" name="stripeToken" value="' + token + '" />');
+    f.append('<input type="hidden" name="payment[token]" value="' + token + '" />');
 
     // Submit the form:
-    // f.get(0).submit();
+     f.get(0).submit();
   }
 }
 
